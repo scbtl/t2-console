@@ -92,21 +92,19 @@ class Install
 
     /**
      * 根据路径关系卸载相关文件
-     * 遍历路径关系数组，删除目标位置的文件或目录。
+     * 遍历路径关系数组，仅删除目标路径下的 `console.php` 文件。
      * @return void
      */
     public static function uninstallByRelation(): void
     {
-        foreach (static::$pathRelation as $source => $dest) {
-            $path = base_path() . "/$dest"; // 目标路径
+        foreach (static::$pathRelation as $dest) {
+            $file = base_path() . "/$dest/console.php"; // 目标文件路径
 
-            // 如果目标路径不存在，跳过处理
-            if (!is_dir($path) && !is_file($path)) {
-                continue;
+            // 如果目标文件存在，删除该文件
+            if (is_file($file)) {
+                unlink($file);
+                echo "Deleted: $file\n";
             }
-
-            // 删除目标目录或文件
-            remove_dir($path);
         }
     }
 }
