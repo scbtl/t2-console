@@ -1,0 +1,36 @@
+{
+  "name": "scbtl/console",
+  "type": "library",
+  "keywords": [
+    "t2 console"
+  ],
+  "homepage": "https://www.t2engine.cn",
+  "license": "MIT",
+  "description": "t2 console",
+  "authors": [
+    {
+      "name": "Tony",
+      "email": "lucky@t2engine.cn",
+      "homepage": "https://www.t2engine.cn",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "lucky@t2engine.cn",
+    "issues": "https://github.com/scbtl/t2-console/issues",
+    "forum": "https://forum.t2engine.cn/",
+    "wiki": "https://doc.t2engine.cn/",
+    "source": "https://github.com/scbtl/t2-framework"
+  },
+  "require": {
+    "symfony/console": ">=5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "T2\\Console\\": "src"
+    }
+  },
+  "require-dev": {
+    "scbtl/t2-engine": "^1.0.0"
+  }
+}
