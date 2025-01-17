@@ -19,7 +19,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use function class_exists;
 
 class Start extends Command
 {
@@ -43,10 +42,6 @@ class Start extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        if (class_exists(Application::class)) {
-            Application::run();
-            return self::SUCCESS;
-        }
         Application::run();
         return self::SUCCESS;
     }
