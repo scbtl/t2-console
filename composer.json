@@ -30,17 +30,6 @@
       "T2\\Console\\": "src"
     }
   },
-  "scripts": {
-    "post-package-install": [
-      "App\\Install::install"
-    ],
-    "post-package-update": [
-      "App\\Install::install"
-    ],
-    "pre-package-uninstall": [
-      "App\\Install::uninstall"
-    ]
-  },
   "require-dev": {
     "scbtl/t2-engine": "^1.0.0"
   }
