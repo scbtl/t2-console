@@ -33,7 +33,7 @@ class Install
      */
     public static function install(): void
     {
-        $dest = base_path() . "/t2"; // 定义目标安装目录
+        $dest = base_path() . "/t2engine"; // 定义目标安装目录
 
         // 检查目标目录是否已存在
         if (is_dir($dest)) {
@@ -42,10 +42,10 @@ class Install
         }
 
         // 复制安装文件到目标目录
-        copy(__DIR__ . "/t2", $dest);
+        copy(__DIR__ . "/t2engine", $dest);
 
         // 设置目标目录权限
-        chmod(base_path() . "/t2", 0755);
+        chmod(base_path() . "/t2engine", 0755);
 
         // 执行基于路径关系的安装逻辑
         static::installByRelation();
@@ -59,8 +59,8 @@ class Install
     public static function uninstall(): void
     {
         // 检查并删除目标安装文件
-        if (is_file(base_path() . "/t2")) {
-            unlink(base_path() . "/t2");
+        if (is_file(base_path() . "/t2engine")) {
+            unlink(base_path() . "/t2engine");
         }
 
         // 执行基于路径关系的卸载逻辑
